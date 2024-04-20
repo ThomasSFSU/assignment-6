@@ -1,7 +1,7 @@
 # assignment-6
 Text Processing and DOM API usage demo.
 
-## UI
+## Program Usage
 ![Program Usage Screenshot](/FrequencyAnalysisScreenshot.png)
 
 ## Description
