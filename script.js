@@ -1,14 +1,17 @@
 const root = document.getElementById("root");
 let form = document.createElement("form");
+form.id = "inputForm";
 
 let textArea = document.createElement("textarea");
 textArea.id = "textBox";
 textArea.name = "Text Input";
+textArea.placeholder = "Enter some text here to perform a frequency analysis.";
 form.appendChild(textArea);
 
 
 let submitButton = document.createElement("button");
 submitButton.type = "submit";
+submitButton.id = "btn";
 submitButton.innerText = "Submit";
 form.appendChild(submitButton);
 
@@ -17,11 +20,11 @@ form.addEventListener("submit", (e) => {
     const fd = new FormData(form);
     const userInput = textArea.value;
 
-    console.log("User Input: ", userInput);
+    //console.log("User Input: ", userInput);
 
     // Split the user input into an array of words based on whitespace.
     const words = userInput.split(" ");
-    console.log("Space Delimited Words: ", words);
+    //console.log("Space Delimited Words: ", words);
 
     // Create a map object with user entered words as keys and their frequencies as values.
     const wordFreqs = new Map();
@@ -33,9 +36,9 @@ form.addEventListener("submit", (e) => {
             wordFreqs.set(currentWord, 1);
         }
     }
-    console.log("Frequency Map: ", wordFreqs);
+    //console.log("Frequency Map: ", wordFreqs);
     const frequencyObject = Object.fromEntries(wordFreqs);
-    console.log("Unsorted Frequency Object: ", frequencyObject);
+    //console.log("Unsorted Frequency Object: ", frequencyObject);
 
 
     let sortedWordFreqs = new Map([...wordFreqs.entries()].sort((a, b) => {
@@ -51,6 +54,7 @@ form.addEventListener("submit", (e) => {
 
     // Create the heading row
     let freqTable = document.createElement("table");
+    freqTable.id = "frequencyTable";
     let newRow = document.createElement("tr");
     let newHeader = document.createElement("th");
     newHeader.innerText = "word_name";
@@ -63,7 +67,7 @@ form.addEventListener("submit", (e) => {
 
     // Add the top 5 keys to the UI table
     const topFiveKeys = Array.from(sortedWordFreqs.keys()).splice(0,5);
-    console.log("Top 5 Keys: ", topFiveKeys);
+    //console.log("Top 5 Keys: ", topFiveKeys);
     for(i in topFiveKeys){
         let row = document.createElement("tr");
         let word = topFiveKeys[i];
