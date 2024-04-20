@@ -2,7 +2,7 @@
 Text Processing and DOM API usage demo.
 
 ## UI
-
+![Program Usage Screenshot](/FrequencyAnalysisScreenshot)
 
 ## Description
 This project demonstrates several important concepts in JavaScript by taking a user entered text and performing a frequency analysis on each word entered by the user. It uses dynamic calls to the DOM API from the script page to update the webpage based on the user input.
