@@ -1,6 +1,9 @@
 # assignment-6
 Text Processing and DOM API usage demo.
 
+## Link
+[GitHub Pages Site](https://thomassfsu.github.io/assignment-6/)
+
 ## Program Usage
 ![Program Usage Screenshot](/FrequencyAnalysisScreenshot.png)
 
